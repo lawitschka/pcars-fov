@@ -1,5 +1,11 @@
 class FovController < ApplicationController
 
+  rescue_from ActiveRecord::RecordNotFound do |exception|
+    flash.alert = "Please fill out the form properly"
+
+    redirect_to root_path
+  end
+
   # Constants
   INCH = 2.54
 
@@ -13,8 +19,10 @@ class FovController < ApplicationController
   def show
     @resolution   = Resolution.find(params[:resolution])
     @monitor_size = MonitorSize.find(params[:monitor_size])
-    @viewing_distance = params[:viewing_distance]
+    @viewing_distance = eval(params[:viewing_distance]).to_f
     @viewing_distance_unit = params[:viewing_distance_unit]
+
+    raise ActiveRecord::RecordNotFound unless @viewing_distance > 0 and @viewing_distance_unit
 
     calc_monitor_with
     calc_fov

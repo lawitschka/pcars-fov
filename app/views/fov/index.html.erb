@@ -8,7 +8,7 @@
   <%= select_tag "monitor_size", options_for_select(@monitor_sizes.collect { |m| ["#{m.size}\"", m.id]}) %>
 
   <%= label_tag "viewing_distance", "Distance Monitor <-> Eyes" %>
-  <%= number_field_tag "viewing_distance", nil, :min => 1 %>
+  <%= number_field_tag "viewing_distance", 50, :min => 1 %>
   <%= select_tag "viewing_distance_unit", options_for_select([["cm", "cm"], ["Inch", "inch"]]) %>
 
   <%= submit_tag "Calculate", :class => [:btn, 'btn-primary'] %>
