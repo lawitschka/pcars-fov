@@ -1,0 +1,2 @@
+class FovController < ApplicationController
+end
