@@ -38,8 +38,10 @@ class FovController < ApplicationController
     end
 
     def calc_fov
-      @best_fov = 2 * Math.atan( 0.5 * @monitor_width[params[:viewing_distance_unit].to_sym] / params[:viewing_distance].to_f )
-      @best_fov = (@best_fov * 100).round
+      # @best_fov = 2 * Math.atan( 0.5 * @monitor_width[params[:viewing_distance_unit].to_sym] / params[:viewing_distance].to_f )
+      # @best_fov = (@best_fov * 100).round
+      @best_fov = (180 / Math::PI) * 2 * Math.atan( @monitor_width[params[:viewing_distance_unit].to_sym] / (2 * params[:viewing_distance].to_f) )
+      @best_fov = @best_fov.round
     end
 
 end
