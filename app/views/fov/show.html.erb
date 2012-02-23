@@ -1,0 +1,6 @@
+Resolution: <%= "#{@resolution.x} x #{@resolution.y}" %>
+Monitor size: <%= "#{@monitor_size.size}\"" %>
+Viewing distance: <%= @viewing_distance %><%= @viewing_distance_unit == "cm" ? "cm" : "\"" %>
+
+Your FOV setting should be:
+<%= @best_fov %>
