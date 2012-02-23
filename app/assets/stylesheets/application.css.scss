@@ -27,6 +27,12 @@ div.container {
   margin-top: 20px;
   width: 700px;
   background-color: #202020;
+  border-radius: 8px;
+
+  img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
 
   h1, h2, h3 {
     margin: 30px auto;
