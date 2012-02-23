@@ -1,6 +1,15 @@
-Resolution: <%= "#{@resolution.x} x #{@resolution.y}" %>
-Monitor size: <%= "#{@monitor_size.size}\"" %>
-Viewing distance: <%= @viewing_distance %><%= @viewing_distance_unit == "cm" ? "cm" : "\"" %>
+<h3>Your settings:</h3>
 
-Your FOV setting should be:
-<%= @best_fov %>
+<div id="settings">
+  <span class="setting-name">Resolution:</span>
+  <span class="setting-value"><%= "#{@resolution.x} x #{@resolution.y}" %></span>
+
+  <span class="setting-name">Monitor size:</span>
+  <span class="setting-value"><%= "#{@monitor_size.size}\"" %></span>
+
+  <span class="setting-name">Viewing distance:</span>
+  <span class="setting-value"><%= @viewing_distance %><%= @viewing_distance_unit == "cm" ? "cm" : "\"" %></span>
+</div>
+
+<h2>Your FoV setting should be:</h2>
+<span class="fov"><%= @best_fov %></span>

@@ -13,3 +13,67 @@
 
 // Twitter Bootstrap
 @import 'bootstrap';
+
+// Basic styles
+body {
+  background-color: black;
+}
+
+div.container {
+  margin-top: 20px;
+  width: 700px;
+  background-color: #202020;
+
+  h1, h2, h3 {
+    margin: 30px auto;
+    width: 600px;
+    text-align: center;
+    color: #d3d3d3;
+  }
+
+  h2, h3 {
+    margin: 30px auto 10px auto;
+  }
+
+  form {
+    width: 450px;
+    margin: 0 auto 20px auto;
+    background-color: #202020;
+
+    input[type=submit] {
+      margin-top: 15px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 76px;
+    }
+
+    label {
+      color: #d3d3d3;
+    }
+  }
+
+  #settings {
+    width: 190px;
+    margin: 0 auto;
+    color: #888;
+
+    .setting-name {
+      display: inline-block;
+      width: 110px;
+    }
+
+    .setting-value {
+      display: inline-block;
+    }
+  }
+
+  span.fov {
+    display: block;
+    font-size: 42px;
+    color: #80E1F3;
+    width: 50px;
+    text-align: center;
+    margin: 0 auto 20px auto;
+  }
+}

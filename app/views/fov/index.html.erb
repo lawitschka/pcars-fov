@@ -1,6 +1,6 @@
-Test
+<h1>FoV Calculator</h1>
 
-<%= form_tag calc_fov_path, :method => :post do %>
+<%= form_tag calc_fov_path, :method => :post, :class => :well do %>
   <%= label_tag "resolution", "Resolution" %>
   <%= select_tag "resolution", options_for_select(@resolutions.collect { |r| ["#{r.x} x #{r.y}", r.id] }) %>
 
@@ -11,5 +11,5 @@ Test
   <%= number_field_tag "viewing_distance", nil, :min => 1 %>
   <%= select_tag "viewing_distance_unit", options_for_select([["cm", "cm"], ["Inch", "inch"]]) %>
 
-  <%= submit_tag "Calculate", :class => [:btn, :primary] %>
+  <%= submit_tag "Calculate", :class => [:btn, 'btn-primary'] %>
 <% end %>
