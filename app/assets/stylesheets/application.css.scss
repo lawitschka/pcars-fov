@@ -39,6 +39,9 @@ div.container {
     width: 450px;
     margin: 0 auto 20px auto;
     background-color: #202020;
+    border: 0;
+    box-shadow: none;
+    -webkit-box-shadow: 0;
 
     input[type=submit] {
       margin-top: 15px;
