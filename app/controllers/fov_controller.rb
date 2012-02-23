@@ -17,14 +17,23 @@ class FovController < ApplicationController
   end
 
   def show
-    @resolution   = Resolution.find(params[:resolution])
-    @monitor_size = MonitorSize.find(params[:monitor_size])
     @viewing_distance = eval(params[:viewing_distance]).to_f
     @viewing_distance_unit = params[:viewing_distance_unit]
 
     raise ActiveRecord::RecordNotFound unless @viewing_distance > 0 and @viewing_distance_unit
 
-    calc_monitor_with
+    @method = params[:method]
+    @measurement_unit = params[:measurement_unit]
+    if @method == 'estimate'
+      @resolution   = Resolution.find(params[:resolution])
+      @monitor_size = MonitorSize.find(params[:monitor_size])
+      calc_monitor_with
+    else
+      @monitor_width        = {}
+      @monitor_width[:cm]   = @measurement_unit == 'cm'   ? eval(params[:monitor_width]) : eval(params[:monitor_width]).to_f * INCH
+      @monitor_width[:inch] = @measurement_unit == 'inch' ? eval(params[:monitor_width]) : eval(params[:monitor_width]).to_f / INCH
+    end
+
     calc_fov
   end
 

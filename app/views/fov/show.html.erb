@@ -1,11 +1,16 @@
 <h3>Your settings:</h3>
 
 <div id="settings">
-  <span class="setting-name">Resolution:</span>
-  <span class="setting-value"><%= "#{@resolution.x} x #{@resolution.y}" %></span>
+  <% if @method == 'estimate' %>
+    <span class="setting-name">Resolution:</span>
+    <span class="setting-value"><%= "#{@resolution.x} x #{@resolution.y}" %></span>
 
-  <span class="setting-name">Monitor size:</span>
-  <span class="setting-value"><%= "#{@monitor_size.size}\"" %></span>
+    <span class="setting-name">Monitor size:</span>
+    <span class="setting-value"><%= "#{@monitor_size.size}\"" %></span>
+  <% else %>
+    <span class="setting-name">Monitor width:</span>
+    <span class="setting-value"><%= @monitor_width[@measurement_unit.to_sym] %><%= @measurement_unit == "cm" ? "cm" : "\"" %></span>
+  <% end %>
 
   <span class="setting-name">Viewing distance:</span>
   <span class="setting-value"><%= @viewing_distance %><%= @viewing_distance_unit == "cm" ? "cm" : "\"" %></span>

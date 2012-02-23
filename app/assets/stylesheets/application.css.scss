@@ -15,6 +15,10 @@
 @import 'bootstrap';
 
 // Basic styles
+.hidden {
+  display: none;
+}
+
 body {
   background-color: black;
 }
@@ -54,6 +58,15 @@ div.container {
     label {
       color: #d3d3d3;
     }
+
+    .method_radio {
+      margin-bottom: 10px;
+      color: #d3d3d3;
+    }
+
+    #method_measurement_box {
+      display: none;
+    }
   }
 
   #settings {
@@ -68,6 +81,8 @@ div.container {
 
     .setting-value {
       display: inline-block;
+      width: 75px;
+      text-align: right;
     }
   }
 

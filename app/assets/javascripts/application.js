@@ -16,5 +16,19 @@
 //= require_tree .
 
 $(function() {
+  // Alert message close button
   $(".alert").alert();
+
+  // Choose screen width
+  $('input[type=radio]').change(function() {
+    var method = $(this).attr('value');
+
+    if (method == 'measurement') {
+      $('#method_estimate_box').hide();
+      $('#method_measurement_box').show();
+    } else {
+      $('#method_estimate_box').show();
+      $('#method_measurement_box').hide();
+    };
+  })
 });
