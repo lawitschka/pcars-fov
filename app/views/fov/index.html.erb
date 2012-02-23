@@ -1,7 +1,7 @@
 <h1>FoV Calculator</h1>
 
 <%= form_tag calc_fov_path, :method => :post, :class => :well do %>
-  <%= label_tag "resolution", "Resolution" %>
+  <%= label_tag "resolution", "Native resolution" %>
   <%= select_tag "resolution", options_for_select(@resolutions.collect { |r| ["#{r.x} x #{r.y}", r.id] }) %>
 
   <%= label_tag "monitor_size", "Monitor size in Inch" %>
